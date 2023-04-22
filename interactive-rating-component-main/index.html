@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+
+
+  <!-- link da fonte do google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+
+  <main>
+    <article id="container-card">
+      <div id="container-img">
+        <img src="./images/icon-star.svg" alt="">
+      </div>
+
+      <div id="container-content">
+        <div id="container-rating">
+          <h1> Como nos saímos?</h1>
+          <p>  Por favor, nos ajude a melhorar classificando nosso suporte. Estamos sempre
+            buscando melhorar nosso trabalho, nos classifique!
+          </p>
+  
+          <div id="container-rate">
+            <div class="container-radio">
+              <label for="1">1</label>
+              <input type="radio" name="rating" value="1" id="1">
+            </div>
+            <div class="container-radio">
+              <label for="2">2</label>
+              <input type="radio" name="rating" value="2" id="2">
+            </div>
+            <div class="container-radio">
+              <label for="3">3</label>
+              <input type="radio" name="rating" value="3" id="3">
+            </div>
+            <div class="container-radio">
+              <label for="4">4</label>
+              <input type="radio" name="rating" value="4" id="4">
+            </div>
+            <div class="container-radio">
+              <label for="5">5</label>
+              <input type="radio" name="rating" value="5" id="5">
+            </div>
+          </div>
+          <button id="submit">Enviar</button>
+        </div>
+  
+        <div id="container-agradecimento">
+          <div id="container-img-thankyou">
+            <img src="./images/illustration-thank-you.svg" alt="">
+          </div>
+  
+          <p id="rating"> Você selecionou <span></span> </p>
+          
+          <div id="container-success">
+            <h1><i> Muito Obrigado!</i></h1>
+
+            <p> Agradecemos gentilmente por você ter dado sua classificação para nós. <br> Lembre-se: <i> qualquer coisa que possamos ajudar, entre em contato!</i></p>
+          </div>
+  
+
+            
+          <div id="container-error">
+            <p>Por favor, clique em uma das classificações da tela anterior para que possa enviar sua nota!</p>
+
+            <button id="btn-voltar">Voltar</button>
+
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </main>
+ 
+  <script src="./script.js"></script>
+</body>
+</html>

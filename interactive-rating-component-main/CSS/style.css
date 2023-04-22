@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: rgb(15, 15, 15);
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.ativo {
+  display: initial;
+}
+
+@keyframes saindo {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 110%;
+  }
+}
+@keyframes crescendo {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 500px;
+  }
+}
+@keyframes entrando {
+  from {
+    right: 110%;
+  }
+  to {
+    right: 0;
+  }
+}
+.saindo, .entrando {
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.saindo {
+  animation-name: saindo;
+}
+
+.entrando {
+  animation-name: entrando;
+}
+
+main {
+  width: 100%;
+  height: 100svh;
+  display: grid;
+  place-items: center;
+}
+main #container-card {
+  background-image: linear-gradient(180deg, rgb(34, 34, 34), rgb(23, 23, 24));
+  padding: 25px;
+  max-width: 400px;
+  min-height: 400px;
+  border-radius: 7%;
+  transition: 0.3s;
+}
+main #container-card p {
+  line-height: 28px;
+  font-weight: 400;
+  font-family: "Lora", serif;
+}
+main #container-card button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  font-family: "Roboto";
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: 0.6s;
+  cursor: pointer;
+  color: rgb(198, 20, 0);
+}
+main #container-card button:hover {
+  background-color: rgb(198, 20, 0);
+  color: whitesmoke;
+}
+main #container-card #container-img {
+  display: flex;
+  background-color: whitesmoke;
+  padding: 15px;
+  border-radius: 50%;
+  margin: unset;
+  margin-bottom: 25px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main #container-card #container-img img {
+  width: 20px;
+}
+main #container-card #container-content {
+  position: relative;
+  place-items: center;
+  overflow: hidden;
+}
+main #container-card #container-content #container-rating {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+main #container-card #container-content #container-rating h1, main #container-card #container-content #container-rating p {
+  font-weight: bold;
+}
+main #container-card #container-content #container-rating h1 {
+  font-size: 2.4rem;
+}
+main #container-card #container-content #container-rating #container-rate {
+  display: grid;
+  grid-auto-flow: column;
+  margin-block: 37.5px;
+}
+main #container-card #container-content #container-rating #container-rate .container-radio input {
+  display: none;
+}
+main #container-card #container-content #container-rating #container-rate .container-radio label {
+  font-weight: 700;
+  background-image: linear-gradient(180deg, rgb(72, 72, 72), rgb(16, 16, 16));
+  padding: 15px;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  transition: 0.6s;
+  cursor: pointer;
+}
+main #container-card #container-content #container-rating #container-rate .container-radio label:hover {
+  background-image: initial;
+  background-color: white;
+  color: black;
+}
+main #container-card #container-content #container-rating #container-rate .container-radio .selected {
+  color: white;
+  background-image: initial;
+  background-color: rgb(198, 20, 0);
+}
+main #container-card #container-content #container-agradecimento {
+  transition: 0.5s;
+  position: relative;
+  top: 0;
+  left: 110%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main #container-card #container-content #container-agradecimento #container-img-thankyou {
+  margin-bottom: 15px;
+}
+main #container-card #container-content #container-agradecimento #rating {
+  color: black;
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: 500;
+  font-family: "Lora";
+}
+main #container-card #container-content #container-agradecimento h1, main #container-card #container-content #container-agradecimento p {
+  margin-bottom: 15px;
+  text-align: center;
+}
+main #container-card #container-content #container-agradecimento h1 {
+  font-size: 2rem;
+}
+main #container-card #container-content #container-agradecimento span {
+  font-weight: 600;
+  color: rgb(198, 20, 0);
+}
+main #container-card #container-content #container-agradecimento button {
+  margin: unset;
+  color: white;
+  background-image: linear-gradient(180deg, rgb(72, 72, 72), rgb(16, 16, 16));
+  width: 40%;
+}
+main #container-card #container-content #container-agradecimento #container-success {
+  animation-name: crescendo;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+main #container-card #container-content #container-agradecimento #container-error {
+  display: initial;
+}

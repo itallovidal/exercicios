@@ -1,0 +1,241 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+body{
+    background-color: rgb(15, 15, 15);
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.ativo{
+    display: initial;
+}
+
+$gradiente: linear-gradient(180deg, rgb(34, 34, 34), rgb(23, 23, 24));
+$gradiente-claro: linear-gradient(180deg, rgb(72, 72, 72), rgb(16, 16, 16));
+$margem: 15px;
+$cor-primaria: rgb(198, 20, 0);
+
+@keyframes saindo {
+    from{
+        right: 0%;
+    }
+    to{
+        right: 110%;
+    }
+}
+
+@keyframes crescendo{
+    from{
+        max-height: 0;
+    }
+    to{
+        max-height: 500px;
+    }
+}
+
+@keyframes entrando {
+    from{
+        right: 110%;
+    }
+    to{
+        right: 0;
+    }
+}
+
+.saindo, .entrando{
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+}
+.saindo{
+    animation-name: saindo;
+}
+.entrando{
+    animation-name: entrando ;
+}
+
+// ----------------------
+
+main{
+    width: 100%;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+
+    #container-card{
+        background-image: $gradiente;
+        padding: 25px;
+        max-width: 400px;
+        min-height: 400px;
+        border-radius: 7%;
+        transition: .3s;
+
+        p{
+            line-height: 28px;
+            font-weight: 400;
+            font-family: 'Lora', serif;
+        }
+
+        button{
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: white;
+
+            font-family: 'Roboto';
+            font-weight: bolder;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: .6s;
+            cursor: pointer;
+            color: $cor-primaria;
+        }
+
+        button:hover{
+            background-color: $cor-primaria;
+            color: whitesmoke;
+
+        }
+
+        #container-img{
+            display: flex;
+            background-color: whitesmoke;
+            padding: 15px;
+            border-radius: 50%;
+            margin: unset;
+            margin-bottom: calc($margem + 10px);
+            width: fit-content;
+
+            img{
+                width: 20px;
+            }
+
+        }
+
+        #container-content{
+            position: relative;
+            place-items: center;
+            overflow: hidden;
+
+            #container-rating{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: fit-content;
+                
+                h1, p{
+                    font-weight: bold;
+                }
+
+                h1{
+                    font-size: 2.4rem;
+                }
+    
+                #container-rate{
+                    display: grid;
+                    grid-auto-flow: column;
+                    margin-block: calc($margem * 2.5);
+                    
+                    .container-radio{
+                        input{
+                            display: none;
+                        }
+        
+                        label
+                        {
+                            font-weight: 700;
+                            background-image: $gradiente-claro;
+                            padding: 15px;
+                            clip-path: circle();
+                            transition: .6s;
+                            cursor: pointer;
+        
+                        }
+    
+                        label:hover{
+                            background-image: initial;
+                            background-color: white;
+                            color: black;
+                        }
+    
+                        .selected{
+                            color: white;
+                            background-image: initial;
+                            background-color: $cor-primaria;
+                        }
+                    }
+                }
+            }
+    
+            #container-agradecimento{
+
+                transition: .5s;
+                position: relative;
+                top: 0;
+                left: 110%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+    
+                #container-img-thankyou{
+                    margin-bottom: $margem;
+                }
+    
+                #rating{
+                    color: black;
+                    background-color: whitesmoke;
+                    padding: 10px;
+                    border-radius: 15px;
+                    font-weight: 500;
+                    font-family: 'Lora';
+                }
+    
+                h1, p{
+                    margin-bottom: $margem;
+                    text-align: center;
+                }
+    
+                h1{
+    
+                    font-size: 2rem;
+                }
+    
+                span{
+                    font-weight: 600;
+                    color: $cor-primaria;
+                }
+    
+                button{
+                    margin: unset;
+                    color: white;
+                    background-image: $gradiente-claro;
+                    width: 40%;
+                }
+
+                #container-success{
+                    animation-name: crescendo;
+                    animation-duration: 2s;
+                    animation-fill-mode: forwards;
+                    display: none;
+                }
+
+                #container-error{
+                    display: initial;
+                }
+            }
+        }
+
+    }
+}
+
