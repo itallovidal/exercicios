@@ -1,0 +1,243 @@
+$fonte: 'Josefin Sans', sans-serif;;
+$font-tamanho-h1: 3rem;
+$font-tamanho-h2: .7rem;
+$font-tamanho-p: .8rem;
+$cor-texto: blacks;
+
+$gradiente-01: linear-gradient( 135deg,hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+
+$gradiente-02: linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+
+
+$cor-primaria: hsl(0, 36%, 70%);
+$cor-secundaria: hsl(0, 93%, 68%);
+
+$esp-grande: 8%;
+$esp-medio: 5%;
+$esp-pequeno: 3%;
+
+@mixin flexboxConfig($justify: center, $align: center, $direction: row)
+{
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+
+:root{
+    font-size: 16px;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+    max-height: fit-content;
+}
+
+body{
+    height: 100svh;
+    display: grid;
+    place-content: center;
+
+    @media (max-width: 500px) {
+        place-content: initial;
+    }
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+//////
+
+main{
+    width: 900px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    // background-color: blue;
+    background-image: url('./../images/bg-pattern-desktop.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    overflow: hidden;
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-bottom: 15%;
+
+    }
+
+    header{
+        grid-row: 1/2;
+        padding: $esp-grande calc($esp-grande *2);
+        margin: 0 0;
+
+        @media (max-width: 500px) {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            padding: $esp-grande;
+
+            div{
+                width: 40%;
+                margin: 0;
+            }
+        }
+    }
+
+    #container-conteudo{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: $esp-grande calc($esp-grande *2);
+        
+        @media (max-width: 500px) {
+            grid-column: 1/2;
+            grid-row: 3/4;
+            padding: $esp-grande;
+            text-align: center;
+        }
+        h1{
+            font-size: $font-tamanho-h1;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1.2rem;
+            margin-bottom: $esp-grande;
+
+            span{
+                font-weight: 200;
+                letter-spacing: 1.4rem;
+                color: $cor-primaria;
+            }
+        }
+
+        p{
+            line-height: 1.5;
+            color: $cor-primaria;
+            margin-bottom: $esp-grande;
+        }
+
+        form{
+            position: relative;
+            @media (min-width: 500px) {
+                margin-bottom: 15%;
+            }
+
+            input{
+                padding: $esp-pequeno;
+                width: 100%;
+                border: 1px solid rgba(0, 0, 0, 0.075);
+                border-radius: 25px;
+                outline: none;
+                font-family: $fonte;
+                transition: .5s;
+            }
+
+            input::placeholder{
+                opacity: .2;
+                color: salmon;
+            }
+
+            input:invalid{
+                border-width: 2px;
+                border-color: red;
+            }
+
+            input:invalid ~ #error{
+
+                animation-name: mostrando;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes ocultando {
+                0%{
+                    opacity: 1;
+                }
+                100%{
+                    opacity: 0;
+                }
+            }
+
+            @keyframes mostrando {
+                0%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+
+            button{
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-image: $gradiente-02;
+                color: white;
+                cursor: pointer;
+                width: 20%;
+                height: 110%;
+                font-size: $font-tamanho-h2 * 1.5;
+                padding: $esp-pequeno;
+                border: 0;
+                border-radius: 25px;
+                box-shadow: 0px 10px 20px rgba(250, 128, 114, 0.362);
+                transition: .4s;
+            }
+
+            button:hover{
+                background-color: white;
+                background-image: none;
+                color: salmon;
+            }
+
+            .retirando{
+                animation-name: ocultando;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            #error{
+                font-size: $font-tamanho-p;
+                opacity: 0;
+            }
+            #error, #sucesso{
+                margin-top: $esp-pequeno;
+                font-weight: 800;
+                position: absolute;
+                color: salmon;
+            }
+            #sucesso{
+                font-style: italic;
+                opacity: 0;
+
+            }
+
+            .sucesso{
+                animation-name: mostrando;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+        }
+
+    }
+    #container-img{
+        grid-column: 2/3;
+        grid-row: 1/3;
+        @media (max-width: 500px) {
+            grid-column: 1/2;
+            grid-row: 2/3;
+
+            img{
+                object-fit: contain;
+            }
+        }
+
+        img{
+            height: 100%;
+        }
+    }
+}

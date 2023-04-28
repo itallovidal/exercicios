@@ -29,6 +29,14 @@ body{
     place-content: center;
 }
 
+@mixin flexboxConfig($justify: center, $align: center, $direction: row)
+{
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
 ///////////////////////
 
 CDN do FontAwesome

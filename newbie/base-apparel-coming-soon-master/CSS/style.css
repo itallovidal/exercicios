@@ -1,0 +1,206 @@
+:root {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+body {
+  height: 100svh;
+  display: grid;
+  place-content: center;
+}
+@media (max-width: 500px) {
+  body {
+    place-content: initial;
+  }
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main {
+  width: 900px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  background-image: url("./../images/bg-pattern-desktop.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media (max-width: 500px) {
+  main {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-bottom: 15%;
+  }
+}
+main header {
+  grid-row: 1/2;
+  padding: 8% 16%;
+  margin: 0 0;
+}
+@media (max-width: 500px) {
+  main header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 8%;
+  }
+  main header div {
+    width: 40%;
+    margin: 0;
+  }
+}
+main #container-conteudo {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  padding: 8% 16%;
+}
+@media (max-width: 500px) {
+  main #container-conteudo {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding: 8%;
+    text-align: center;
+  }
+}
+main #container-conteudo h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1.2rem;
+  margin-bottom: 8%;
+}
+main #container-conteudo h1 span {
+  font-weight: 200;
+  letter-spacing: 1.4rem;
+  color: hsl(0, 36%, 70%);
+}
+main #container-conteudo p {
+  line-height: 1.5;
+  color: hsl(0, 36%, 70%);
+  margin-bottom: 8%;
+}
+main #container-conteudo form {
+  position: relative;
+}
+@media (min-width: 500px) {
+  main #container-conteudo form {
+    margin-bottom: 15%;
+  }
+}
+main #container-conteudo form input {
+  padding: 3%;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  border-radius: 25px;
+  outline: none;
+  font-family: "Josefin Sans", sans-serif;
+  transition: 0.5s;
+}
+main #container-conteudo form input::-moz-placeholder {
+  opacity: 0.2;
+  color: salmon;
+}
+main #container-conteudo form input::placeholder {
+  opacity: 0.2;
+  color: salmon;
+}
+main #container-conteudo form input:invalid {
+  border-width: 2px;
+  border-color: red;
+}
+main #container-conteudo form input:invalid ~ #error {
+  animation-name: mostrando;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes ocultando {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes mostrando {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main #container-conteudo form button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  color: white;
+  cursor: pointer;
+  width: 20%;
+  height: 110%;
+  font-size: 1.05rem;
+  padding: 3%;
+  border: 0;
+  border-radius: 25px;
+  box-shadow: 0px 10px 20px rgba(250, 128, 114, 0.362);
+  transition: 0.4s;
+}
+main #container-conteudo form button:hover {
+  background-color: white;
+  background-image: none;
+  color: salmon;
+}
+main #container-conteudo form .retirando {
+  animation-name: ocultando;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+main #container-conteudo form #error {
+  font-size: 0.8rem;
+  opacity: 0;
+}
+main #container-conteudo form #error, main #container-conteudo form #sucesso {
+  margin-top: 3%;
+  font-weight: 800;
+  position: absolute;
+  color: salmon;
+}
+main #container-conteudo form #sucesso {
+  font-style: italic;
+  opacity: 0;
+}
+main #container-conteudo form .sucesso {
+  animation-name: mostrando;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+main #container-img {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+@media (max-width: 500px) {
+  main #container-img {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  main #container-img img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+main #container-img img {
+  height: 100%;
+}
