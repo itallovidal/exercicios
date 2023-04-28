@@ -1,0 +1,290 @@
+$fonte: 'Manrope', sans-serif;;
+$font-tamanho-h1: 1.7rem;
+$font-tamanho-h2: 1.1rem;
+$font-tamanho-p: .8rem;
+$cor-texto: hsla(238, 29%, 16%, 0.511);
+
+$cor-primaria: hsl(217, 19%, 35%);
+$cor-secundaria: hsl(214, 17%, 51%);
+$fundo: hsl(210, 46%, 95%);
+
+$esp-grande: 8%;
+$esp-medio: 5%;
+$esp-pequeno: 3%;
+
+
+:root{
+    font-size: 16px;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+    max-height: fit-content;
+    font-family: $fonte;
+}
+
+body{
+    background-color: $fundo;
+    height: 100svh;
+    display: grid;
+    place-content: center;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+a{
+    color: white;
+}
+
+
+@mixin footerConfig(){
+    width: 100%;
+    grid-auto-flow: column;
+    display: grid;
+    align-items: center;
+    grid-auto-columns: 1fr 3fr 1fr;
+}
+
+@mixin configContainerMidias(){
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: .8rem;
+    color: white;
+    background-color: $cor-primaria;
+
+}
+///////////////////////
+
+
+
+
+main{
+    width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-radius: 20px;
+    color: $cor-texto;
+    position: relative;
+
+    @media (max-width: 500px) {
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 2fr;
+
+    }
+
+    #col-1{
+        height: 100%;
+        overflow: hidden;
+        border-radius: 20px 00px 0px 20px;
+        @media (max-width: 500px) {
+            border-radius: 20px 20px 00px 00px;
+            width: 100%;
+            img{
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
+        div{
+            height: 100%;
+        }
+    }
+
+
+    #col-2{
+        padding: $esp-grande;
+        background-color: white;
+        border-radius: 0 20px 20px 0;
+        @media (max-width: 500px) {
+            border-radius: 00px 00px 20px 20px;
+            padding-bottom: 0;
+        }
+
+        #container-tips{
+            h1{
+                font-size: $font-tamanho-h1;
+                margin-bottom: $esp-pequeno;
+                @media (max-width: 500px) {
+                    font-size: $font-tamanho-h2;
+                    font-weight: 700;
+                }
+            }
+
+            p{
+                width: 90%;
+                line-height: 1.6;
+                margin: 0;
+            }
+
+        }
+
+        footer{
+            position: relative;
+            margin-top: $esp-grande;
+            @include footerConfig();
+            margin-bottom: $esp-grande ;
+
+
+            
+            #container-img-perfil{
+                width: 40%;
+                clip-path: circle();
+
+                img{
+                    object-fit: contain;
+                    transform: scale(1.09);
+                }
+            }
+
+            #container-info-perfil{
+                @media (max-width: 500px) {
+                    font-size: $font-tamanho-p;
+                }
+            }
+
+            #container-btn-midias{
+                position: relative;
+                z-index: 2;
+                background-color: $fundo;
+                padding: $esp-grande;
+                clip-path: circle();
+                transition: .5s;
+                @media (max-width: 500px) {
+                    padding: $esp-grande * 2;
+                }
+            }
+
+            #container-btn-midias:hover{
+                cursor: pointer;
+                background-color: $cor-primaria;
+                color: white;
+            }
+
+            #container-midias{
+                position: absolute;
+                padding: $esp-pequeno $esp-medio;
+                border-radius: 15px;
+                place-items: center;
+                right: -50%;
+                transform: translate(-72%);
+                opacity: 1;
+                display: none;
+                @include configContainerMidias;
+
+
+
+                @media (max-width: 500px) {
+                    display: none !important;
+                }
+                
+                span{
+                    margin-right: $esp-grande;
+                }
+            }
+
+            .ocultando{
+                animation-name: ocultando;
+                animation-duration: .4s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-out;
+            }
+
+            .mostrando{
+                animation-name: mostrando;
+                animation-duration: .4s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-out;
+            }
+
+            @keyframes ocultando {
+                0%{
+                    top: -110%;
+                    opacity: 1;
+                }
+                100%{
+                    top: -60%;
+                    opacity: 0;
+                }
+            }
+
+            @keyframes mostrando {
+                0%{
+                    top: -60%;
+                    opacity: 0;
+                }
+                100%{
+                    top: -110%;
+                    opacity: 1;
+                }
+            }
+
+            #container-midias::before
+            {
+                content: '';
+                clip-path:polygon(50% 100%, 0 0, 100% 0);
+                height: 20px;
+                position: absolute;
+                width: 40px;
+                background-color: $cor-primaria;
+                bottom: -20%;
+                left: 50%;
+                transform: translate(-50%);
+                z-index: 10;
+                @media (max-width: 500px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .mostrando-mobile{
+        animation-name: mostrando-mobile;
+        animation-duration: .4s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes mostrando-mobile {
+        0%{
+            opacity: 0
+        }
+        100%{
+            opacity: 1
+        }
+    }
+    #footer-mobile
+    {
+        @include footerConfig();
+        position: absolute;
+        bottom: 0;
+        height: 10vh;
+        font-size: $font-tamanho-h1;
+        @include configContainerMidias;
+        justify-content: left;
+        border-radius: 00px 00px 20px 20px;
+        display: none;
+        opacity: 0;
+        @media (min-width: 500px) {
+            display: none ;
+        }
+
+
+        #container-midias{
+            font-size: $font-tamanho-p;
+            margin: 0;
+            margin-left: $esp-grande;
+
+            a{
+                font-size: $font-tamanho-h2; 
+            }
+        }
+    }
+}
+
