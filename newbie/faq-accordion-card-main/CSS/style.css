@@ -62,7 +62,7 @@ main {
     grid-template-rows: 120px 1fr;
     height: -moz-fit-content;
     height: fit-content;
-    width: 80%;
+    width: 92%;
   }
 }
 main #wrapper-faq {
