@@ -1,0 +1,192 @@
+$fonte: 'Libre Franklin', sans-serif;
+$font-tamanho-h2: .7rem;
+$font-tamanho-p: .8rem;
+$cor-texto: black ;
+
+$cor-primaria: hsl(223, 83%, 55%);
+$cor-secundaria: hsl(223, 87%, 63%);
+
+$esp-grande: 8%;
+$esp-medio: 5%;
+$esp-pequeno: 3%;
+
+
+:root{
+    font-size: 16px;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+    max-height: fit-content;
+    font-family: $fonte;
+}
+
+body{
+    height: 100svh;
+    display: grid;
+    place-content: center;
+}
+
+@mixin flexboxConfig($justify: center, $align: center, $direction: row)
+{
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+///
+@media (max-width: 400px) {
+    :root{
+        font-size: 12px;
+    }
+}
+
+main{
+    width: min(700px, 80%);
+    display: grid;
+    place-items: center;
+
+    #container_logo{
+        margin-block: $esp-medio;
+    }
+
+    #container_destaque{
+        h1{
+            font-weight: 400;
+            color: rgb(160, 159, 159);
+
+            strong{
+                color: black;
+            }
+        }
+
+        p{
+            margin-block: $esp-medio;
+            width: fit-content;
+        }
+    }
+
+    #container_notificacao{
+        width: 80%;
+        position: relative;
+        margin-bottom: $esp-grande;
+
+        @media (max-width: 400px) {
+            width: 100%;
+            padding-block: $esp-medio;
+        }
+
+        input{
+            transition: .5s;
+            border-radius: 40px;
+            outline: none;
+            padding: $esp-pequeno;
+            width: 65%;
+            border: 1px solid rgb(174, 174, 174);
+
+            @media (max-width: 400px) {
+                width: 100%;
+                padding-block: $esp-medio;
+            }
+        }
+
+        input:invalid{
+            border: 1px solid red;
+        }
+
+        #error{
+            opacity: 0;
+            bottom: -50%;
+            left: -5%;
+            font-size: $font-tamanho-p;
+            font-style: italic;
+            color: red;
+            position: absolute;
+            transition: .5s;
+        }
+
+        input:invalid ~ #error{
+            opacity: 1;
+            left: 5%;
+        }
+
+        input:focus{
+            transform: translateY(-10%);
+
+        }
+
+        button{
+            width: 30%;
+            transition: .5s;
+            outline: none;
+            border: none;
+            padding: $esp-pequeno;
+            color: white;
+            font-weight: 700;
+            background-color: $cor-secundaria;
+            border-radius: 40px;
+            box-shadow: 0px 5px 10px hsla(223, 87%, 63%, 0.5);
+            margin-left: 3%;
+
+            @media (max-width: 400px) {
+                width: 100%;                margin-left: 0%;
+                margin-top: $esp-pequeno;
+                padding-block: $esp-medio;
+            }
+        }
+
+        button:hover{
+            cursor: pointer;
+            transform: translateY(-10%);
+        }
+    }
+    
+    #container_ilustrativo{
+        width: 70%;
+        margin-bottom: $esp-grande;
+
+        @media (max-width: 400px) {
+            width: 100%;
+        }
+
+        img{
+            max-width: 100%;
+        }
+    }
+
+    footer{
+        div{
+            @include flexboxConfig();
+            width: max(12rem, 30%);
+            margin-bottom: $esp-grande;
+            i{
+                color: $cor-primaria;
+                @include flexboxConfig();
+                padding: $esp-pequeno * 2;
+                border-radius: 50%;
+                border: 1px solid rgba(128, 128, 128, 0.197);
+                transition: .5s;
+
+                @media (max-width: 400px) {
+                    font-size: 2rem;
+                    padding: $esp-pequeno * 2;
+                }
+            }
+
+            i:hover{
+                background-color: $cor-primaria;
+                color: white;
+                cursor: pointer;
+            }
+       }
+
+       p{
+        font-size: $font-tamanho-p;
+        text-align: center;
+        opacity: .2;
+       }
+    }
+}
