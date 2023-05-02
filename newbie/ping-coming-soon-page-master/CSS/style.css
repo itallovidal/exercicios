@@ -50,7 +50,7 @@ main #container_notificacao {
 @media (max-width: 400px) {
   main #container_notificacao {
     width: 100%;
-    padding-block: 5%;
+    padding-block: 11.2%;
   }
 }
 main #container_notificacao input {
@@ -79,6 +79,12 @@ main #container_notificacao #error {
   color: red;
   position: absolute;
   transition: 0.5s;
+}
+@media (max-width: 400px) {
+  main #container_notificacao #error {
+    bottom: -1%;
+    font-size: 0.96rem;
+  }
 }
 main #container_notificacao input:invalid ~ #error {
   opacity: 1;

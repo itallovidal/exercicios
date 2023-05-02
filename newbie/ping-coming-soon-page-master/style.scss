@@ -76,7 +76,7 @@ main{
 
         @media (max-width: 400px) {
             width: 100%;
-            padding-block: $esp-medio;
+            padding-block: $esp-grande* 1.4;
         }
 
         input{
@@ -106,6 +106,12 @@ main{
             color: red;
             position: absolute;
             transition: .5s;
+
+                
+            @media (max-width: 400px) {
+                bottom: -1%;
+                font-size: $font-tamanho-p * 1.2;
+            }
         }
 
         input:invalid ~ #error{
