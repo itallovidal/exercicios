@@ -1,0 +1,114 @@
+$fonte: 'Poppins', sans-serif;;
+$font-tamanho-h1: 3rem;
+$font-tamanho-h2: .7rem;
+$font-tamanho-p: .8rem;
+
+$cor-primaria: hsl(259, 100%, 65%);
+$cor-secundaria:  hsl(0, 0%, 94%) ;
+$cor-terciaria:  hsl(0, 100%, 67%);
+
+$cor-borda:rgba(0, 0, 0, 0.047); 
+
+$esp-grande: 8%;
+$esp-medio: 5%;
+$esp-pequeno: 3%;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+img{
+    max-width: 100%;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+    max-height: fit-content;
+    font-family: $fonte;
+}
+
+body{
+    background-color: rgb(231, 230, 230);
+    height: 100svh;
+    display: grid;
+    place-content: center;
+}
+
+@mixin flexboxConfig($justify: center, $align: center, $direction: row)
+{
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+
+#container_card{
+    width: 900px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px 10px 200px 10px;
+    border: none;
+    padding: $esp-medio;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09);
+
+    #container_inputs{
+        padding-block: $esp-pequeno;
+        display: flex;
+        border-bottom: 2px solid $cor-borda;
+        margin-bottom: $esp-medio;
+        position: relative;
+        width: 90%;
+        margin: 0;
+
+        div{
+            width: 20%;
+            margin: 0 0;
+            margin-right: 5%;
+            p{
+                text-transform: uppercase;
+                opacity: .4;
+                margin-bottom: $esp-medio;
+            }
+            input{
+                padding: $esp-grande;
+                border: 1px solid $cor-borda;
+                outline: none;
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        #container_btn{
+            cursor: pointer;
+            position: absolute;
+            background-color: black;
+            padding: $esp-medio;
+            border-radius: 50%;
+            bottom: 0;
+            right: -10%;
+            transform: translateY(50%)
+                       scale(.8);
+        }
+
+
+    }
+
+    #container_data{
+        font-size: $font-tamanho-h1;
+        font-style: italic;
+
+        span{
+            color: $cor-primaria;
+        }
+    }
+
+}

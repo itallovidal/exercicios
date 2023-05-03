@@ -1,0 +1,82 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: rgb(231, 230, 230);
+  height: 100svh;
+  display: grid;
+  place-content: center;
+}
+
+#container_card {
+  width: 900px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px 10px 200px 10px;
+  border: none;
+  padding: 5%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09);
+}
+#container_card #container_inputs {
+  padding-block: 3%;
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.047);
+  margin-bottom: 5%;
+  position: relative;
+  width: 90%;
+  margin: 0;
+}
+#container_card #container_inputs div {
+  width: 20%;
+  margin: 0 0;
+  margin-right: 5%;
+}
+#container_card #container_inputs div p {
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-bottom: 5%;
+}
+#container_card #container_inputs div input {
+  padding: 8%;
+  border: 1px solid rgba(0, 0, 0, 0.047);
+  outline: none;
+  width: 100%;
+  border-radius: 5px;
+}
+#container_card #container_inputs #container_btn {
+  cursor: pointer;
+  position: absolute;
+  background-color: black;
+  padding: 5%;
+  border-radius: 50%;
+  bottom: 0;
+  right: -10%;
+  transform: translateY(50%) scale(0.8);
+}
+#container_card #container_data {
+  font-size: 3rem;
+  font-style: italic;
+}
+#container_card #container_data span {
+  color: hsl(259, 100%, 65%);
+}
