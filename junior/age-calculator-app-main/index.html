@@ -21,32 +21,39 @@
 <body>
 
   <main id="container_card">
-    <div id="container_inputs">
+    <form id="container_inputs">
       <div> 
         <p>Day</p>
-        <input id="dia" type="number">
+        <input id="dia" type="number" placeholder="01" pattern="{2}" title="Por Favor, preencha corretamente">
       </div>
       <div> 
         <p>Month</p>
-        <input id="mes" type="number">
+        <input id="mes" type="number" placeholder="01" pattern="{2}">
       </div>
       <div> 
         <p>Year</p>
-        <input id="ano" type="number">
+        <input id="ano" type="number" placeholder="1970" pattern="{4}" >
       </div>
 
       <button id="container_btn">
         <img src="./images/icon-arrow.svg" alt="">
       </button>
-    </div>
+    </form>
 
     <div id="container_data">
       <h1><span id="anos">--</span> years</h1>
       <h1><span id="meses">--</span> months</h1>
       <h1><span id="dias">--</span> days</h1>
+
     </div>
   </main>
 
+
+  <script>
+    document.querySelector('form').addEventListener('submit',(e)=>{
+      e.preventDefault()
+    })
+  </script>
   <script src="./script.js"></script>
 </body>
 </html>

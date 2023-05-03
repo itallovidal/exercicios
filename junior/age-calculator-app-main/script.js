@@ -2,6 +2,7 @@ const spanDias = document.querySelector('#dias')
 const spanMes = document.querySelector('#meses')
 const spanAnos = document.querySelector('#anos')
 const btn = document.querySelector('#container_btn')
+const card = document.querySelector('#container_card')
 
 //------------------------------------------------------------
 
@@ -77,27 +78,60 @@ btn.addEventListener('click', ()=>{
     const d = Number(document.querySelector("#dia").value) 
     const m = Number(document.querySelector("#mes").value) 
     const a = Number(document.querySelector("#ano").value) 
+    valor = checkDate(d,m,a)
 
-    if(checkDate(d,m,a)){
+    console.log(valor)
+
+    if(valor == true){
         spanDias.innerHTML = contaDias(d)
         spanMes.innerHTML = contaMeses(m)
         spanAnos.innerHTML = contaAnos(d, m, a)
+    }
+    else{
+        let h1 = document.createElement('h1')
+        h1.setAttribute('class', 'error')
+        h1.classList.toggle('fade-in')
+        card.appendChild(h1)
+
+        switch (valor) {
+            case 2:
+                h1.innerHTML = 'Dia inválido.'
+                break;
+            case 3:
+                h1.innerHTML = 'Mês inválido.'
+                break;
+
+            case 4:
+                h1.innerHTML = 'Ano inválido.'
+                break;
+            default:
+                break;
+        }
+
+        setTimeout(()=>{
+            h1.classList.toggle('show')
+            h1.classList.toggle('fade-in')
+            h1.classList.toggle('fade-out')
+
+            setTimeout(()=>{h1.remove()}, 2500)
+        }, 2001)
     }
 })
 
 function checkDate(d,m,a){
     const date = new Date()
 
-    if(d <= 0 || d > 31){
-        return false
+    console.log(d, m, a)
+    if(d <= 0 || d > 31 || d == ''){
+        return 2
     }
 
-    if(m <= 0 || m > 12){
-        return false
+    if(m <= 0 || m > 12 || m == ''){
+        return 3
     }
 
-    if(a > date.getFullYear() || a < 1900){
-        return false
+    if(a > date.getFullYear() || a < 1970 || a == ''){
+        return 4
     }
     
     return true
