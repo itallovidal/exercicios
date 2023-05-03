@@ -10,10 +10,19 @@ function contaAnos(d,m,a){
     // const month = (((1000 * 60) * 60) * 24) * 30;
     const anoMs = (((1000 * 60) * 60) * 24) * 365; // ano em milissigundos
 
+    const date = new Date()
+
     // data atual
     const dataAtual = Date.now()
     dataUsuario = new Date(`${m} ${d} ${a}`)
-    return (Math.round(dataAtual / anoMs) - Math.round(dataUsuario.getTime() / anoMs)) - 1
+
+    anos = Math.round(dataAtual / anoMs) - Math.round(dataUsuario.getTime() / anoMs)
+
+    if(m <= (date.getMonth() + 1)){
+        return anos
+    }else{
+        return anos = anos - 1
+    }
 }
 
 function contaMeses(mesPassado){
