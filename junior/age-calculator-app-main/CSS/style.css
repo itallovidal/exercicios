@@ -41,7 +41,7 @@ body {
 }
 
 #container_card {
-  width: 1200px;
+  width: min(90vw, 1200px);
   background-color: rgb(255, 255, 255);
   border-radius: 10px 10px 200px 10px;
   border: none;
@@ -121,12 +121,11 @@ body {
   background-color: hsl(259, 100%, 65%);
 }
 #container_card #container_data {
-  font-size: 3rem;
+  font-size: max(3vw, 2rem);
   font-style: italic;
 }
 @media (max-width: 400px) {
   #container_card #container_data {
-    font-size: 1.5rem;
     margin-block: 16%;
   }
 }
