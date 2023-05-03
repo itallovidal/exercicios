@@ -13,7 +13,7 @@ function contaAnos(d,m,a){
     // data atual
     const dataAtual = Date.now()
     dataUsuario = new Date(`${m} ${d} ${a}`)
-    return Math.round(dataAtual / anoMs) - Math.round(dataUsuario.getTime() / anoMs)
+    return (Math.round(dataAtual / anoMs) - Math.round(dataUsuario.getTime() / anoMs)) - 1
 }
 
 function contaMeses(mesPassado){
