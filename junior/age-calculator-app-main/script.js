@@ -46,8 +46,9 @@ function contaMeses(mesPassado){
     else{
         while(mesPassado != mesAtual){
 
-            if((mesPassado - 1) > 0){
-                mesPassado = 12
+
+            if((mesPassado - 1) == 0){
+                mesPassado = 13
             }
 
             mesPassado = mesPassado - 1
@@ -67,18 +68,21 @@ function contaDias(diaPassado){
     meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     i = 0
 
+
+
     if(diaPassado == diaAtual){
         return contadorDias
     }
     else{
         while(diaPassado != diaAtual){
+
             if((diaPassado - 1) == 0){
-                diaPassado = meses[mesAtual + i]
+                diaPassado = meses[mesAtual - i]
                 i++
             }
 
-            diaPassado--
-            contadorDias++
+            diaPassado = diaPassado - 1
+            contadorDias = contadorDias + 1
         }
 
         return contadorDias
@@ -91,8 +95,6 @@ btn.addEventListener('click', ()=>{
     const m = Number(document.querySelector("#mes").value) 
     const a = Number(document.querySelector("#ano").value) 
     valor = checkDate(d,m,a)
-
-    console.log(valor)
 
     if(valor == true){
         spanDias.innerHTML = contaDias(d)
@@ -133,7 +135,6 @@ btn.addEventListener('click', ()=>{
 function checkDate(d,m,a){
     const date = new Date()
 
-    console.log(d, m, a)
     if(d <= 0 || d > 31 || d == ''){
         return 2
     }
