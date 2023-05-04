@@ -11,6 +11,7 @@ function contaAnos(d,m,a){
     const anoMs = (((1000 * 60) * 60) * 24) * 365; // ano em milissigundos
 
     const date = new Date()
+    mesAtual = date.getMonth() + 1
 
     // data atual
     const dataAtual = Date.now()
@@ -18,10 +19,19 @@ function contaAnos(d,m,a){
 
     anos = Math.round(dataAtual / anoMs) - Math.round(dataUsuario.getTime() / anoMs)
 
-    if(m <= (date.getMonth() + 1)){
-        return anos
-    }else{
+    if(m < mesAtual){
         return anos = anos - 1
+    }else if(m == mesAtual ){
+        if(d >= date.getDay()){
+            return anos 
+        }
+        else{
+            return anos = anos - 1
+        }
+    }
+
+    else{
+        return anos
     }
 }
 
@@ -36,11 +46,11 @@ function contaMeses(mesPassado){
     else{
         while(mesPassado != mesAtual){
 
-            if((mesPassado + 1) > 12){
-                mesPassado = 0
+            if((mesPassado - 1) > 0){
+                mesPassado = 12
             }
 
-            mesPassado = mesPassado + 1
+            mesPassado = mesPassado - 1
             contadorMeses = contadorMeses + 1
         }
 
@@ -51,7 +61,8 @@ function contaMeses(mesPassado){
 function contaDias(diaPassado){
     const date = new Date()
     let contadorDias = 0
-    diaAtual = date.getDay()
+    let diaAtual = date.getDay()
+    let mesAtual = date.getMonth()
 
     meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     i = 0
@@ -60,22 +71,14 @@ function contaDias(diaPassado){
         return contadorDias
     }
     else{
-        
         while(diaPassado != diaAtual){
-            limiteMes = meses[date.getMonth() + i]
-
-            if(limiteMes == undefined){
-                i = 0
-                limiteMes = meses[date.getMonth() + i]
+            if((diaPassado - 1) == 0){
+                diaPassado = meses[mesAtual + i]
+                i++
             }
 
-            if((diaPassado + 1) > limiteMes){
-                diaPassado = 0
-            }
-
-            diaPassado = diaPassado + 1
-            contadorDias = contadorDias + 1
-            i = i + 1
+            diaPassado--
+            contadorDias++
         }
 
         return contadorDias
@@ -104,14 +107,14 @@ btn.addEventListener('click', ()=>{
 
         switch (valor) {
             case 2:
-                h1.innerHTML = 'Dia inválido.'
+                h1.innerHTML = 'Invalid Day.'
                 break;
             case 3:
-                h1.innerHTML = 'Mês inválido.'
+                h1.innerHTML = 'Invalid Month.'
                 break;
 
             case 4:
-                h1.innerHTML = 'Ano inválido.'
+                h1.innerHTML = 'Invalid Year..'
                 break;
             default:
                 break;
