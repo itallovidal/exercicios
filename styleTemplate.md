@@ -1,10 +1,13 @@
 $fonte:;
-$font-tamanho-h2: .7rem;
-$font-tamanho-p: .8rem;
+$font-tamanho-h2: .85rem;
+$font-tamanho-p: .7rem;
 $cor-texto: ;
 
-$cor-primaria: ;
-$cor-secundaria: ;
+$cor-primaria: hsl(35, 77%, 62%);
+$cor-secundaria: hsl(5, 85%, 63%);
+$cor-terciaria: hsl(233, 8%, 79%);
+$cor-quaternaria: hsl(236, 13%, 42%);
+$cor-quinternaria: hsl(240, 100%, 5%);
 
 $esp-grande: 8%;
 $esp-medio: 5%;
@@ -20,10 +23,20 @@ $esp-pequeno: 3%;
     padding: 0;
     margin: 0 auto;
     max-height: fit-content;
+    font-family: $fonte; 
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+img{
+    max-width: 100%;
 }
 
 body{
-    background-image: linear-gradient(90deg, $cor-primaria, $cor-secundaria);
+    // background-image: linear-gradient(90deg, $cor-primaria, $cor-secundaria); 
     height: 100svh;
     display: grid;
     place-content: center;
