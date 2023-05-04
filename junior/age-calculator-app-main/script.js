@@ -7,7 +7,6 @@ const card = document.querySelector('#container_card')
 //------------------------------------------------------------
 
 function contaAnos(d,m,a){
-    // const month = (((1000 * 60) * 60) * 24) * 30;
     const anoMs = (((1000 * 60) * 60) * 24) * 365; // ano em milissigundos
 
     const date = new Date()
@@ -17,21 +16,22 @@ function contaAnos(d,m,a){
     const dataAtual = Date.now()
     dataUsuario = new Date(`${m} ${d} ${a}`)
 
-    anos = Math.round(dataAtual / anoMs) - Math.round(dataUsuario.getTime() / anoMs)
+    let anos = (Math.round(dataAtual / anoMs)) - (Math.round(dataUsuario.getTime() / anoMs))
 
+    console.log(anos)
     if(m < mesAtual){
-        return anos = anos - 1
-    }else if(m == mesAtual ){
+        return anos
+    }
+    else if(m == mesAtual ){
         if(d >= date.getDay()){
             return anos 
         }
         else{
-            return anos = anos - 1
+            return anos - 1
         }
     }
-
     else{
-        return anos
+        return anos - 1
     }
 }
 
