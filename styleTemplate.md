@@ -1,7 +1,9 @@
-$fonte:;
-$font-tamanho-h2: .85rem;
-$font-tamanho-p: .7rem;
-$cor-texto: ;
+$fonte: ;
+$font-tamanho-h1: 2.5rem;
+$font-tamanho-h2: 2rem;
+$font-tamanho-h3: 1rem;
+$font-tamanho-p1: .8rem;
+$font-tamanho-p2: .5rem;
 
 $cor-primaria: hsl(35, 77%, 62%);
 $cor-secundaria: hsl(5, 85%, 63%);

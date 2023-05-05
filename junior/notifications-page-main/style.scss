@@ -1,0 +1,274 @@
+$fonte: 'Plus Jakarta Sans', sans-serif;
+$font-tamanho-h1: 2.5rem;
+$font-tamanho-h2: 2rem;
+$font-tamanho-h3: 1rem;
+$font-tamanho-p1: .8rem;
+$font-tamanho-p2: .5rem;
+
+$texto: rgba(0, 0, 0, 0.537);
+
+$cor-primaria: hsl(1, 90%, 64%);
+$cor-secundaria: hsl(219, 85%, 26%);
+$cor-terciaria: hsl(210, 60%, 98%);
+$cor-quaternaria: hsla(218, 40%, 83%, 0.213);
+$cor-quinternaria: hsl(211, 83%, 40%);
+
+$esp-grande: 8%;
+$esp-medio: 5%;
+$esp-pequeno: 3%;
+$esp-pequeno-2: 1.5%;
+
+
+:root{
+    font-size: 16px;
+}
+
+@media (max-width: 400px){
+    :root{
+        font-size: 12px;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    max-height: fit-content;
+    font-family: $fonte; 
+}
+
+p, h2, h1, h3{
+    margin-block: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    // background-image: linear-gradient(90deg, $cor-primaria, $cor-secundaria); 
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+    background-color: $cor-terciaria;
+}
+
+@mixin flexboxConfig($justify: center, $align: center, $direction: row)
+{
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+///////////////////////
+
+
+main{
+    width: min(100%, 800px);
+    background-color: white;
+    padding: $esp-medio;
+    border-radius: 15px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+    cursor: pointer;
+
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        div{
+            width: 50%;
+            @include flexboxConfig(start);
+            height: 5vh;
+            min-height: 50px; 
+
+            h1{
+                font-size: $font-tamanho-h2;
+            }
+            #qtdNotificacoes{
+                background-color: none;
+                padding: $esp-pequeno;
+                margin-left: $esp-grande;
+                font-size: $font-tamanho-p1;
+                color: white;
+                border-radius: 5px;
+                transition: .3s;
+            }
+
+            .notAtiva {
+                background-color: $cor-secundaria;
+                color: white;
+            }
+        }
+
+        button{
+            position: relative;
+            z-index: 2;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: $esp-pequeno * .6;
+            transition: .3s;
+        }
+
+        button:hover{
+            background-color: $cor-secundaria;
+            color: white;
+            border-radius: 5px;
+            
+        }
+
+    }
+
+
+    article
+    {
+        display: grid;
+        gap: 1;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 3s cubic-bezier(0.3, 0.57, 0.26, 0.82);
+
+
+        .container_notificacao{
+            padding: $esp-pequeno;
+            @include flexboxConfig(start, start); 
+            gap: $esp-pequeno;  
+            
+            picture{
+                flex-basis: 8%;
+                img{
+                    width: 100%;
+                    transition: .3s;
+                    border-radius: 50%;
+                    box-shadow: 1px 3px 1px white;
+
+                }
+
+                img:hover{
+                    cursor: pointer;
+                    box-shadow: 1px 3px 1px $cor-quinternaria;
+                    border-radius: 50%;
+                }
+            }
+
+
+
+            div{
+                flex-basis: 80%;
+                // width: 85%;
+                flex-grow: 1;
+                @include flexboxConfig(start, start, column );
+
+                h2, h3{
+                    font-size: $font-tamanho-h3;
+                    margin-bottom: $esp-pequeno-2;
+                    font-weight: 400;
+                    color: $texto;
+
+                    
+                    .nomePessoa, a{
+                        color: black;
+                        font-weight: 800;
+                    }
+
+                    .nomePessoa:hover, a:hover{
+                        color: $cor-quinternaria;
+                        cursor: pointer;
+                    }
+                }
+
+
+                p{
+                    opacity: .5;
+                }
+
+                #pvtMessage{
+                    padding: $esp-medio;
+                    background-color: $cor-quaternaria ;
+                    margin-top: $esp-pequeno;
+                    border-radius: 10px;
+                    transition: .3s;
+                    cursor: pointer;
+                }
+
+                #pvtMessage:hover{
+                    transform: scale(1.02);
+                }
+            }
+
+            #comentarioNot{
+                flex-basis: 60%;
+            }
+
+        }
+
+
+
+        .notNova{
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn .5s .5s forwards;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            100%{
+                opacity: 1;
+            }
+        }
+    }
+
+    .not_aberta{
+        max-height: 200vh;
+        cursor: default;
+
+    }
+}
+
+
+
+// .container_geral:hover:after{
+//     animation-fill-mode: forwards !important;
+// }
+
+.container_geral::after, .notNova::after{
+    content: '';
+    position: absolute;
+    height: 0vh;
+    width: 0vw;
+    opacity: .3;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: $cor-quinternaria;
+    top: 50%;
+    opacity: .1;
+    left: 50%;
+
+    
+    animation: pulse 2s infinite;
+}
+
+.container_geral:hover{
+    transform: scale(1.05)
+               translateY(-5%);
+}
+
+@keyframes pulse {
+    100%{
+        opacity: 0;
+        height: 50vh;
+        width: 50vw;
+    }
+}
