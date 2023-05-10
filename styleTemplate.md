@@ -15,6 +15,25 @@ $esp-grande: 8%;
 $esp-medio: 5%;
 $esp-pequeno: 3%;
 
+.fade_in{
+    animation: fadeIn .5s forwards;
+}
+
+.fade_out{
+    animation: fadeOut .5s forwards;
+}
+
+@keyframes fadeOut {
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    100%{
+        opacity: 1;
+    }
+}
 
 :root{
     font-size: 16px;
@@ -39,7 +58,7 @@ img{
 
 body{
     // background-image: linear-gradient(90deg, $cor-primaria, $cor-secundaria); 
-    height: 100svh;
+    min-height: 100svh;
     display: grid;
     place-content: center;
 }
