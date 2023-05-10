@@ -68,6 +68,11 @@ main {
   height: 100svh;
   grid-template-columns: 0.5fr 1fr;
 }
+@media (max-width: 1000px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
 main #container_cards {
   position: relative;
   width: 100%;
@@ -81,8 +86,12 @@ main #container_cards {
 }
 main #container_cards section {
   position: relative;
-  width: 325px;
-  height: 200px;
+  max-width: 23rem;
+  max-height: 13rem;
+  width: 45vw;
+  height: 28vw;
+  min-width: 250px;
+  min-height: 150px;
   box-shadow: 10px 10px 10px rgba(51, 51, 51, 0.065);
   border-radius: 15px;
   background-size: 100% 100%;
@@ -95,6 +104,11 @@ main #container_cards #preview_front {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+}
+@media (max-width: 1000px) {
+  main #container_cards #preview_front {
+    right: -5%;
+  }
 }
 main #container_cards #preview_front #container_detail {
   width: 80%;
@@ -120,6 +134,11 @@ main #container_cards #preview_back {
   align-self: start;
   right: -40%;
 }
+@media (max-width: 1000px) {
+  main #container_cards #preview_back {
+    right: 5%;
+  }
+}
 main #container_cards #container_info {
   display: flex;
   flex-wrap: wrap;
@@ -135,6 +154,11 @@ main #container_cards #container_info h2 {
   font-size: 1.3rem;
   letter-spacing: 0.1rem;
 }
+@media (max-width: 1000px) {
+  main #container_cards #container_info h2 {
+    font-size: 0.8rem;
+  }
+}
 main #container_cards #container_info div {
   display: flex;
   justify-content: space-between;
@@ -148,7 +172,8 @@ main #container_cards #preview_back {
 }
 main #container_cards #preview_back #preview_cvc {
   position: absolute;
-  top: 45%;
+  top: 50%;
+  transform: translateY(-51%);
   right: 12%;
   color: white;
 }
@@ -156,6 +181,11 @@ main #container_form {
   display: grid;
   place-items: center;
   width: 40%;
+}
+@media (max-width: 1000px) {
+  main #container_form {
+    width: 100%;
+  }
 }
 main #container_form section {
   margin-bottom: 10%;
