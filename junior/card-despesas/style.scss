@@ -1,0 +1,238 @@
+$fonte: 'DM Sans', sans-serif;;
+$font-tamanho-h1: 2.5rem;
+$font-tamanho-h2: 2rem;
+$font-tamanho-h3: 1rem;
+$font-tamanho-p1: .8rem;
+$font-tamanho-p2: .5rem;
+
+$cor-1: hsl(186, 34%, 60%);
+$cor-2: hsl(10, 79%, 65%);
+$cor-3: hsl(27, 66%, 92%);
+$cor-4: hsl(33, 100%, 98%);
+$cor-5: hsl(25, 47%, 15%);
+
+$esp-grande: 8%;
+$esp-medio: 5%;
+$esp-pequeno: 3%;
+
+.fade_in{
+    animation: fadeIn .5s forwards;
+}
+
+.fade_out{
+    animation: fadeOut .5s forwards;
+}
+
+.hide{
+    display: none;
+}
+
+@keyframes fadeOut {
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    100%{
+        opacity: 1;
+    }
+}
+
+:root{
+    font-size: 16px;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+    max-height: fit-content;
+    font-family: $fonte; 
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    // background-image: linear-gradient(90deg, $cor-primaria, $cor-secundaria); 
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+    background-color: $cor-3;
+}
+
+@mixin flexboxConfig($justify: center, $align: center, $direction: row)
+{
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+main{
+    width: 500px;
+
+    #container_total{
+        background-color: $cor-2;
+        color: white;
+        padding: $esp-medio;
+        margin-bottom: $esp-medio;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        div, picture{
+            margin: 0 0;
+        }
+    }
+
+    #container_semana{
+        padding: $esp-medio;
+        background-color: white;
+        border-radius: 10px;
+        #container_estatisticas{
+            opacity: 0;
+            
+            h1{
+                margin-bottom: $esp-grande * 1.5;
+            }
+    
+            #container_gastos{
+                height: 20vh;
+                display: flex;
+                align-items: end;
+                gap: $esp-pequeno;
+                padding-bottom: $esp-grande;
+                border-bottom: 1px solid $cor-3;
+                margin-bottom: $esp-medio;
+                div{
+                    height: 15%;
+                    flex-basis: 100%;
+                    background-color: $cor-2;
+                    transition: .2s;
+                    cursor: pointer;
+                    border-radius: 7px ;
+                    position: relative;
+    
+                    span{
+                        position: absolute;
+                        opacity: 0;
+                        top: -1.6rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: $cor-5;
+                        padding: $esp-medio $esp-grande;
+                        color: white;
+                        width: 105%;
+                        border-radius: 3px ;
+                        text-align: center;
+                        font-size: $font-tamanho-p1;
+                        transition: .2s;
+                    }
+                }
+    
+                div:hover{
+                    background-color: $cor-1;
+                }
+                div:hover span{
+                    opacity: 1;
+                }
+    
+                .show{
+                    opacity: 1;
+                }
+    
+                div::before{
+                    bottom: -1.3rem;
+                    font-size: $font-tamanho-p1;
+                    opacity: .5;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                }
+    
+                div[data-dia="1"]::before{
+                    content: 'seg';
+                }
+                div[data-dia="2"]::before{
+                    content: 'ter';
+                }
+                div[data-dia="3"]::before{
+                    content: 'qua';
+                }
+                div[data-dia="4"]::before{
+                    content: 'qui';
+                }
+                div[data-dia="5"]::before{
+                    content: 'sex';
+                }
+                div[data-dia="6"]::before{
+                    content: 'sab';
+                }
+                div[data-dia="7"]::before{
+                    content: 'dom';
+                }
+            }
+    
+            footer{
+                display: flex;
+                justify-content: space-between;
+    
+                div{
+                    margin: 0;
+    
+                    #total_anterior{
+                        font-size: $font-tamanho-h2;
+                    }
+                }
+            }
+        }
+        
+        #container_form{
+            display: flex;
+            flex-wrap: wrap;
+            gap: $esp-pequeno;
+
+            h1{
+                width: 100%;
+                margin-bottom: $esp-grande;
+            }
+
+            button{
+                width: 50%;
+                background: $cor-1;
+                color: white;
+                border: none;
+                border-radius: 7px;
+                margin-block: $esp-medio;
+                padding-block: $esp-pequeno;
+                transition: .3s;
+            }
+
+            button:hover{
+                cursor: pointer;
+                background-color: $cor-2;
+            }
+
+            div{
+                flex-basis: 40%;
+                margin-bottom: $esp-pequeno;
+
+                input{
+                    width: 100%;
+                    border-radius: 4px;
+                    padding: $esp-grande;
+                    outline: none;
+                    border: 1px solid rgba(0, 0, 0, 0.12) ;
+                }
+            }
+        }
+    }
+}

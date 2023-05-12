@@ -5,11 +5,11 @@ $font-tamanho-h3: 1rem;
 $font-tamanho-p1: .8rem;
 $font-tamanho-p2: .5rem;
 
-$cor-primaria: hsl(35, 77%, 62%);
-$cor-secundaria: hsl(5, 85%, 63%);
-$cor-terciaria: hsl(233, 8%, 79%);
-$cor-quaternaria: hsl(236, 13%, 42%);
-$cor-quinternaria: hsl(240, 100%, 5%);
+$cor-1: hsl(35, 77%, 62%);
+$cor-2: hsl(5, 85%, 63%);
+$cor-3: hsl(233, 8%, 79%);
+$cor-4: hsl(236, 13%, 42%);
+$cor-5: hsl(240, 100%, 5%);
 
 $esp-grande: 8%;
 $esp-medio: 5%;
