@@ -8,27 +8,25 @@ const week_exp = Array.from(document.querySelectorAll('.semanaAtual'))
 
 function inputCheck(el)
 {
-    if(el == ''){
+    if(el === ''){
         return false
     }
 
-    if(el.length < 1){
-        return false
-    }
-
-    return true
+    return el.length >= 1;
 }
 
 function checkLength(e){
-    input = e.target
+    let input = e.target
     if(input.value.length > 5){
         input.value = input.value.slice(0,5)
     }
 }
 
 function fillStats(statusBar,  value, total, lastWeek){
+    let weekDiff
     let percentage = Number((100 * value) / total)
     statusBar.style.height = percentage + '%'
+    statusBar.children[0].innerHTML = `$${value}`
 
     total_spent.innerHTML = total
 
@@ -37,18 +35,20 @@ function fillStats(statusBar,  value, total, lastWeek){
 
     const weekDiff_span = document.querySelector('strong')
     if(lastWeek >= total){
-        weekDiff = Number(((lastWeek - total) / lastWeek) * 100)
+        weekDiff = Math.round(Number(((lastWeek - total) / lastWeek) * 100))
     }else{
-        weekDiff = Number(((total - lastWeek) / lastWeek) * 100)
+        weekDiff = Math.round(Number(((total - lastWeek) / lastWeek) * 100))
     }
-    console.log(weekDiff)
-    weekDiff_span.innerHTML = weekDiff + "%"
 
+    let str = `+${weekDiff}%`
+    if(total < lastWeek){
+        str = `-${weekDiff}%`
+    }
+    weekDiff_span.innerHTML = str
 }
 
 
 /////////////////////////////////
-
 
 stats.forEach((el)=>{
     el.addEventListener('click', (e) => {
@@ -64,7 +64,7 @@ week_exp.forEach((el)=>{
 })
 
 
-btn.addEventListener('click', ()=>{
+btn.addEventListener('click', (e)=>{
     const verification = []
 
     week_exp.forEach((el)=>{
@@ -74,8 +74,9 @@ btn.addEventListener('click', ()=>{
     verification.push(inputCheck(lastWeek.value))
 
     // caso nao tenha input preenchido
-    if(verification.includes(false) == true){
+    if(verification.includes(false) === true){
         console.log('input não preenchido')
+        e.target.classList.add('btn-error')
     } 
     else{ // caso esteja tudo correto
         console.log('tudo correto')
