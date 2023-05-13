@@ -66,6 +66,7 @@ body{
     display: grid;
     place-content: center;
     background-color: $cor-3;
+    //background: blue;
 }
 
 @mixin flexboxConfig($justify: center, $align: center, $direction: row)
