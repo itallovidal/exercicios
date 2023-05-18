@@ -31,4 +31,4 @@ Nesta pasta será encontrado materiais dos desafios do site [frontendmentor.io](
 
 Muitas vezes adiciono mais funcionalidades às páginas, então os resultados podem fazer coisas diferentes dos propostos nos desafios. Todos os projetos possuem versão de mobile e de desktop, respeitando uma leiturabilidade e uma experiência digna para o usuário.
 
-![](./vis%C3%A3o%20geral/readmegeral.png)
+![](./readmesimages/readmegeral.png)
