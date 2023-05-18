@@ -1,18 +1,3 @@
-<style>
-    *{
-        font-family: Arial;
-    }
-
-    blockquote{
-        padding-block: 1.2rem;
-        margin-block: 1.5rem;
-    }
-
-    h3{
-        font-weight: bold;
-    }
-</style>
-
 <!-- Sobre o que é? -->
 # Frontend Mentor Challenges
 
