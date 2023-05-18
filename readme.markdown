@@ -5,9 +5,9 @@
 ###  Linguagens Utilizadas
 
 
-> - HTML
-> - CSS com SASS
-> - JS vanilla
+- HTML
+- CSS com SASS
+- JS vanilla
 
 ### Objetivos
 
