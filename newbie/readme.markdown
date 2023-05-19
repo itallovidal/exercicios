@@ -8,9 +8,9 @@
 
 ### Sobre
 
-Nesta pasta estão reunidos o resultado dos desafios nível <em>newbie</em> do [frontendmentor.io](https://www.frontendmentor.io/challenges). Abaixo as visões gerais de cada desafio.
+Nesta pasta estão reunidos o resultado dos desafios nível <em>newbie</em> do [frontendmentor.io](https://www.frontendmentor.io/challenges). Como eu estava um tempo sem estudar, eu precisava relembrar alguns conceitos e testar outros, então foi bem produtivo para acostumar à nova rotina de estudos. Neste nível não se tem muitos desafios pois achei o nível deles bem simples. Abaixo as visões gerais de cada desafio.
 
-#### Desafio 01: Visão Geral 
+#### Desafio 01: Proposta
 O proposto aqui é replicar um card de avaliação. Dependendo da seleção, mostrar os resultados. Caso não tenha nada selecionado, avisa ao usuário.
 
 
