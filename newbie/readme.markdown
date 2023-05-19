@@ -1,7 +1,5 @@
-<!-- Sobre o que é? -->
 # Frontend Mentor: Newbie
 
-<!-- Linguagens Utilizadas -->
 ###  Linguagens Utilizadas
 
 - HTML
@@ -15,23 +13,26 @@ Nesta pasta estão reunidos o resultado dos desafios nível <em>newbie</em> do [
 #### Desafio 01: Visão Geral 
 O proposto aqui é replicar um card de avaliação. Dependendo da seleção, mostrar os resultados. Caso não tenha nada selecionado, avisa ao usuário.
 
-<picture style="display: flex;">
 
-<img alt="" style="width: 49%" src="../readmesimages/1-1newbie.png">
-<img alt="" style="width: 49%" src="../readmesimages/1-2newbie.png">
+![](../readmesimages/newbie1.png)
 
-</picture>
+#### Desafio 02: Proposta
+Replicar um card informando que a empresa irá ser lançada em breve. Nesse card temos um form simples que verifica se o conteúdo escrito no form é um email ou não. Neste desafio o formulário apesar de indicar que enviou o email, ele não de fato envia, já que o intuito não era mexer no backend.
 
-#### Desafio 02: Visão Geral
-O proposto aqui é replicar um card de
+![](../readmesimages/newbie2.png)
 
-<picture style="display: flex; flex-basis: 49%">
+#### Desafio 03: Proposta
+Muito semelhante ao desafio anterior. Novamente para treinar estrutura e responsividade utilizando grid/flexbox.
 
-<picture style="display: flex;">
+![](../readmesimages/newbie3.png)
 
-<img alt="" style="width: 49%; object-fit: contain; height: 500px" src="../readmesimages/2-1newbie.png">
-<img alt="" style="width: 49%; object-fit: contain; height: 500px" src="../readmesimages/2-2newbie.png">
+#### Desafio 04: Proposta
 
-</picture>
+Replicar um card de FAQ interativo, quando o usuário clicasse na pergunta, ela aparecesse com sua respectiva resposta.
 
-</picture>
+![](../readmesimages/newbie4.png)
+
+#### Desafio 05: Proposta
+Replicar um card informativo sobre mobília. Nele teríamos um botão clicável que mostrasse as mídias sociais. OBS.: Links inativos.
+
+![](../readmesimages/newbie5.png)

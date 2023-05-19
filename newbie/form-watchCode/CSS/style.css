@@ -6,7 +6,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0 auto;
-  max-height: -moz-fit-content;
   max-height: fit-content;
 }
 
@@ -19,9 +18,8 @@ body {
   background-image: url("../images/bg-intro-desktop.png");
   background-size: 100%;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   body {
-    height: -moz-fit-content;
     height: fit-content;
     background-image: url("../images/bg-intro-mobile.png");
   }
@@ -78,7 +76,7 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 3%;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   main {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, max-height);
@@ -99,14 +97,13 @@ main #container-msg {
   padding-block: 5%;
   transition: 0.2s;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   main #container-msg {
     grid-column: 1/2;
     grid-row: 2/3;
   }
 }
 main #container-msg p {
-  width: -moz-fit-content;
   width: fit-content;
 }
 main #container-principal {
@@ -117,7 +114,7 @@ main #container-principal {
   background-color: white;
   border-radius: 10px;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   main #container-principal {
     grid-column: 1/2;
     grid-row: 3/4;
@@ -152,12 +149,11 @@ main #container-principal form button {
 }
 main #container-principal form span {
   font-size: 0.64rem;
-  width: -moz-fit-content;
   width: fit-content;
   display: block;
   color: rgb(193, 193, 193);
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   main #container-principal form span #mobile-break {
     display: initial;
   }
@@ -189,7 +185,7 @@ main #container-merchan {
   line-height: 1;
   color: white;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   main #container-merchan {
     grid-column: 1/2;
     grid-row: 1/2;
@@ -204,3 +200,5 @@ main #container-merchan p {
   font-weight: 500;
   line-height: 1.5;
 }
+
+/*# sourceMappingURL=style.css.map */
