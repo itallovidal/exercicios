@@ -1,0 +1,406 @@
+@mixin flex($justify: center, $align: center, $dir: row){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $dir;
+}
+
+@mixin media($device: 1100)
+{
+    @if $device == 1100{
+        @media (max-width: 1100px) {
+            @content;
+        }
+    }
+
+    @else if $device == 770{
+        @media (max-width: 770px) {
+            @content;
+        }
+    }
+
+    @else if $device == 500
+    {
+        @media (max-width: 770px) {
+            @content;
+        }
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$page-space: 15%;
+$margin-top: 3%;
+$spacing: 5%;
+$border-radius: 3px;
+$gradiente: #e7e7e7, #189bc2;
+
+$cor-fundo-projetos: #e7e7e7;
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+    clip-path: polygon(18% 13%, 86% 0, 92% 71%, 10% 88%);}
+
+// ----------------
+
+@include media(500)
+{
+    :root{
+        font-size: 12px
+    }
+}
+
+#container-nav{
+    @include flex(end);
+
+    span{
+        width: 30%;
+        padding-left: $page-space;
+        font-size: 1rem;
+    }
+    nav{
+        width: 70%;
+        padding: $spacing;
+        padding-right: $page-space;
+        @include flex(end);
+
+        a{
+            display: inline-block;
+            margin-left: 5%;
+        }
+    }
+}
+
+main{
+    #oquesou{
+        @include flex();
+        @include media{
+            flex-direction: column-reverse;
+        }
+        
+        #container-img{
+            width: 40%;
+            @include flex();
+            @include media{
+                width: 100%;
+            }
+            img{
+                margin: 0 auto;
+                width: 50%;
+            }
+        }
+
+        #info{
+            width: 60%;
+            padding: $spacing;
+            font-size: 2rem;
+            @include media(770)
+            {
+                width: 80%;
+            }
+
+            h1{
+                position: relative;
+
+                #detalhe{
+                    position: absolute;
+                    width: 90px;
+                    left: -5%;
+                    top: -7%;
+                    z-index: -1;
+                    filter:  hue-rotate(99deg) saturate(1);
+
+                    @include media(770)
+                    {
+                        width: 60px;
+                    }
+                }
+            }
+            p{
+                margin-top: $margin-top;
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .wrapper{
+        padding: 0 $spacing * 2;
+
+        @include flex(center, start);
+        @include media{
+            flex-direction: column;
+        }
+
+
+        h1{
+            @include flex(start, start);
+            width: 40%;
+            font-size: 6rem;
+            opacity: .2;
+            padding: $spacing - 1;
+            word-break: break-all;
+            text-transform: uppercase;
+            @include media(770){
+                width: 100%;
+                justify-content: center;
+                padding-bottom: $spacing - 5;
+                font-size: 3rem;
+
+                br{
+                    display: none;
+                }
+            }
+
+            @include media(1100){
+                
+                text-align: center;
+                width: fit-content;
+                margin: 0 auto;
+                br{
+                    display: none;
+                }
+
+            }
+
+        }
+
+        .container-projetos{
+            width: 60%;
+            padding: $spacing;
+            @include flex(center, start, column);
+            @include media(1100){
+                width: 100%;
+            }
+            .desc{
+                // width: 70%;
+                margin-bottom: $margin-top;
+                @include media{
+                    width: 100%;
+                }
+            }
+
+            .projeto{
+                width: 100%;
+                background-color: $cor-fundo-projetos;
+                padding: $spacing;
+                font-size: .8rem;
+                @include flex(center, flex-start);
+                position: relative;
+                border-radius: $border-radius;
+                margin-bottom: $margin-top;
+                @include media(500)
+                {
+                    flex-direction: column;
+                }
+
+                @include media(770)
+                {
+                    flex-direction: column;
+                }
+
+                .info-projeto{
+                    width: 55%;
+                    @include media(500)
+                    {
+                        width: 100%;
+                    }
+
+                    margin-bottom: $spacing;
+                }
+
+                .linguagens-projeto{
+                    width: 45%;
+                    @include media(500)
+                    {
+                        width: 100%;
+                    }
+                }
+
+                h2{
+                    margin-bottom: $margin-top;
+
+                    
+                    &::before{
+                        content: '';
+                        left: -3px;
+                        width: 3px;
+                        height: 20px;
+                        background-image: linear-gradient($gradiente);
+                        position: absolute;
+                    }
+                }
+
+                p{
+                    width: 80%;
+                    // font-weight: lighter;
+                }
+
+                span{
+                    padding: 5px;
+                    display: inline-block;
+                    margin: 5px;
+                    background-color: white;
+                    border-radius: $border-radius;
+                }
+            }
+        }
+    }
+
+    #container-formacao{
+        background-color: #141414;
+        color: white;
+        flex: 1;
+
+        .container-formacoes{
+            @include flex(center, initial);
+            width: 100%;
+            font-size: .8rem;
+            // height: 30vh;
+            flex: 1;
+            @include media(770)
+            {
+                height: 120px;
+            }
+
+            .formacoes{
+                margin-right: $spacing;
+                background-color: black;
+                border-radius: $border-radius;
+                padding: $spacing 0 ;
+                // height: 100%;
+
+                p, h3 {
+                    padding-left: $spacing * 3 ;
+                    padding-right: $spacing * 3 ;
+                }
+
+                p{
+                    text-transform: uppercase;
+                    margin-bottom: $margin-top;
+                }
+
+                h3{
+                    margin-bottom: $margin-top * 5;
+                    position: relative;
+                    @include media(500)
+                    {
+                        font-size: .7rem;
+                    }
+
+                    &::before{
+                        content: '';
+                        left: -3px;
+                        width: 3px;
+                        height: 30px;
+                        background-image: linear-gradient($gradiente);
+                        position: absolute;
+                    }
+                }
+            }
+        }
+
+        .container-curriculo
+        {
+            margin-top: $spacing;
+            width: 100%;
+
+            span{
+                font-weight: bold;
+                font-size: .8rem;
+                text-transform: uppercase;
+                opacity: .7;
+            }
+
+            .wp {
+                margin-top: $spacing - 3;
+            }
+
+            div{
+                @include flex(space-between);
+                width: 100%;
+
+                h4, p{
+                    width: fit-content;
+                    margin-bottom: $spacing - 3;
+                }
+                
+                p{
+                    font-weight: bold;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    background-color: black;
+    color: white;
+    padding: 0 $spacing * 2;
+
+
+
+    #container-footer{
+        width: 100%;
+        margin: 0 auto;
+        @include flex();
+        @include media(500)
+        {
+            flex-direction: column;
+        }
+
+        h1{
+            @include media(770){
+                font-size: 1.5rem
+
+            }
+        }
+
+        p{
+            width: 40%;
+            padding: $spacing;
+            @include media(500)
+            {
+                width: 100%;
+            }
+        }
+    
+        div{
+            width: 60%;
+            text-align: center; 
+            padding: $spacing;
+            
+            @include media(500)
+            {
+                width: 100%;
+            }
+        }
+    }
+
+    span{
+        padding: $spacing;
+        font-size: .8rem;
+        padding-bottom: $spacing;
+        display: block;
+
+        @include media(500)
+        {
+            text-align: center;
+        }
+    }
+}
+
+
