@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="CSS/style.css">
+  <!-- fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- cdn fontawesome -->
+  <script src="https://kit.fontawesome.com/782e4cfd7d.js" crossorigin="anonymous"></script>
+
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+</head>
+<body>
+
+  <main>
+    <div id="container-msg"> <p> <strong>Try it free 7 days </strong>  then $20/mo. thereafter</p></div>
+    <article id="container-principal" >
+      <form action="">
+        <input type="text" pattern="[A-za-z]{3}" title="Name must have more than 3 letters." placeholder="First Name">
+        <input type="text"  pattern="[A-za-z]{3}" title="Name must have more than 3 letters." placeholder="Last Name">
+        <input type="email" placeholder="Email Address">
+        <input type="password" title="Password must have more than 5 characters." pattern="{5}"  placeholder="Password">
+  
+        <button type="submit">Claim your free trial</button>
+        <span>By clicking the button, you are agreeing to our <br id="mobile-break"> <span class="link-especial">Terms and Services</span> </span>
+      </form>
+
+      <div id="container-sucesso">
+        <div> <img src="images/got.png" alt="" srcset=""></div>
+        <p> Your Trial has been sent to <span class="link-especial"> your email! </span></p>
+      </div>
+    </article>
+
+    <article id="container-merchan">
+      <h1> Learn to code by <br> watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable. </p>
+    </article>
+  </main> 
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

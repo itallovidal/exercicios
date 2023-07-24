@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="stylesheet" href="CSS/style.css">
+
+  <!-- Fonte do google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+
+  <main>
+    <article id="container_cards">
+      <section id="preview_front">
+        <div id="container_detail">
+          <div id="detail_1"></div>
+          <div id="detail_2"></div>
+        </div>
+
+        <div id="container_info">
+          <h2 class="preview" id="preview_number"></h2>
+          <div>
+            <p class="preview" id="preview_name"></p>
+            <p class="preview" id="preview_valid"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="preview_back">
+        <p class="preview" id="preview_cvc"></p>
+      </section>
+    </article>
+
+    <article id="container_form">
+      <form class="hide" action="">
+        <section class="front_card">
+          <label for="">Cardholder name</label>
+          <input  id="card_name" title='Must contain 3+ characters' placeholder="Jane Appleseed" type="text">
+        </section>
+        <section class="front_card">
+          <label for="">card number</label>
+          <input id="card_number" title="Must Contain 16 Numbers" pattern="{16}" placeholder="1234 123456 12345" type="number">
+        </section>
+
+        <section id="back_card">
+          <div id="container_date">
+            <label  for="">Exp.Date</label>
+            <input pattern="{2}" min="1" max="12" title="Must contain 2 numbers" id="month" placeholder="MM" type="number">
+            <input pattern="{2}" min="24" title="Mininum year is 24." id="year" placeholder="YY" type="number">
+          </div>
+
+          <div>
+            <label for="cvc">CVC</label>
+            <input id="cvc" pattern="{4}" title="Must contain 3 numbers"  placeholder="e.g. 123" type="number" min="100" max="9999">
+          </div>
+        </section>
+
+        <button>Confirm</button>
+      </form>
+
+      <section class="hide" id="container_success">
+        <picture>
+          <img src="images/icon-complete.svg" alt="">
+        </picture>
+        <h2>Thank You</h2>
+        <p>We've added your card details</p>
+        <button onclick="location.reload()">Continue</button>
+
+      </section>
+    </article>
+  </main>
+
+
+
+<script src="script.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <!-- fonte do google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/782e4cfd7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Frontend Mentor | Expenses chart component</title>
+</head>
+<body>
+
+  <main>
+
+
+    <article id="container_semana">
+
+      <section id="container_estatisticas" class="hide">
+        <div id="container_total">
+          <div>
+            <p>Total da Semana:</p>
+            <h1>$ <span id="total_gasto">000.00</span></h1>
+          </div>
+          <picture>
+            <img src="images/logo.svg" alt="">
+          </picture>
+        </div>
+
+        <div id="container_dados">
+          <h1>Gasto nos últimos 7 dias.</h1>
+          <div id="container_gastos">
+            <div class="barraGastos" data-dia="1">
+              <span></span>
+            </div>
+            <div class="barraGastos" data-dia="2">
+              <span></span>
+            </div>
+            <div class="barraGastos" data-dia="3">
+              <span></span>
+            </div>
+            <div class="barraGastos" data-dia="4">
+              <span></span>
+            </div>
+            <div class="barraGastos" data-dia="5">
+              <span></span>
+            </div>
+            <div class="barraGastos" data-dia="6">
+              <span></span>
+            </div>
+            <div class="barraGastos" data-dia="7">
+              <span></span>
+            </div>
+          </div>
+          <footer>
+            <div>
+              <p>Total da semana passada </p>
+              <h1>$ <span id="total_anterior"> 00.00 </span></h1>
+            </div>
+
+            <div>
+              <strong>0.0%</strong>
+              <p>em relação <br> à última semana.</p>
+            </div>
+          </footer>
+        </div>
+      </section>
+      <section id="container_form">
+        <h1>Gastos Semanais:</h1>
+        <div>
+          <label for="seg">Segunda</label>
+          <input id="seg" class="semanaAtual" value="40" type="number">
+        </div>
+        <div>
+          <label for="ter">terça</label>
+          <input id="ter" class="semanaAtual" value="10" type="number">
+        </div>
+        <div>
+          <label for="qua">Quarta</label>
+          <input id="qua" class="semanaAtual" value="10" type="number">
+        </div>
+        <div>
+          <label for="qui">Quinta</label>
+          <input id="qui" class="semanaAtual" value="10" type="number">
+        </div>
+        <div>
+          <label for="sex">Sexta</label>
+          <input id="sex" class="semanaAtual" value="10" type="number">
+        </div>
+        <div>
+          <label for="sab">Sabado</label>
+          <input id="sab" class="semanaAtual" value="10" type="number">
+        </div>
+        <div>
+          <label for="dom">Domingo</label>
+          <input id="dom" class="semanaAtual" value="10" type="number">
+        </div>
+        <div>
+          <label for="semPassada">Semana passada:</label>
+          <input id="semPassada" class="semanaAnterior" type="number">
+        </div>
+
+        <button id="btn_iniciar">Continuar</button>
+
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

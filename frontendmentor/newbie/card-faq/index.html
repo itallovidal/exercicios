@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+  <script src="https://kit.fontawesome.com/782e4cfd7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- meu css -->
+  <link rel="stylesheet" href="CSS/style.css">
+
+  <!-- Fonte do google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+</head>
+<body>
+
+  <main>
+    <article id="wrapper-picture">
+      
+      <div id="img-container">
+        <picture>
+          <source media="(min-width: 400px )" srcset="images/illustration-woman-online-desktop.svg">
+          <source srcset="images/illustration-woman-online-mobile.svg">
+          <img src="" alt="">
+        </picture>
+      </div>
+
+      <div id="img-box-container">
+        <img src="images/illustration-box-desktop.svg" alt="">
+      </div>
+
+
+
+    </article>
+
+    <article id="wrapper-faq">
+      <h1>FAQ</h1>
+
+      <section id="faq-container">
+        <div class="question-container">
+          <div data-question="q1" class="dropdown-btn">
+            <h2>How many team members can I invite? </h2>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          
+        </div>
+
+        <div class="question-container">
+          <div data-question="q2" class="dropdown-btn">
+            <h2>What is the maximum file upload size?</h2>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+        </div>
+
+        <div class="question-container">
+          <div data-question="q3" class="dropdown-btn">
+            <h2> How do I reset my password? </h2>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          
+        </div>
+        <div class="question-container">
+          <div data-question="q4" class="dropdown-btn">
+            <h2>Can I cancel my subscription?</h2>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          
+        </div>
+
+        <div class="question-container">
+          <div data-question="q5" class="dropdown-btn">
+            <h2>Do you provide additional support? </h2>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  
+  <script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html>
