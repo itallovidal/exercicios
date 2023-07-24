@@ -1,4 +1,4 @@
-# Frontend Mentor: Newbie
+# Frontend Mentor: Junior
 
 ###  Linguagens Utilizadas
 
