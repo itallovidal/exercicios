@@ -22,3 +22,16 @@ picture{
     object-fit: cover;
   }
 }
+
+button{
+  border: none;
+  background: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 200ms;
+  cursor: pointer;
+
+  &:hover{
+    background: #1ab38b;
+  }
+}
