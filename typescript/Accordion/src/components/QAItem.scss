@@ -1,0 +1,40 @@
+@use '../css/_config' as *;
+
+.QAItem_container{
+  display: grid;
+  grid-template-rows: auto 0fr;
+  padding: $escala-p;
+  transition: grid-template-rows 500ms;
+  width: 70%;
+  margin: 0 auto;
+  background: #2d2d2d;
+  border-radius: 10px;
+  margin-block: $escala-g;
+
+
+  .QAI_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    i{
+      transition: 200ms;
+      color: white;
+    }
+
+    .btn_open{
+      transform: rotate(180deg);
+    }
+  }
+
+  .QAAnswer{
+    overflow: hidden;
+    line-height: 1.6;
+  }
+}
+
+.open{
+  grid-template-rows: auto 1fr;
+  grid-auto-flow: column;
+  background: #191919;
+}

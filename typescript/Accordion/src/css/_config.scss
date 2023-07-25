@@ -1,0 +1,42 @@
+$fonte-1: '';
+$fonte-2: '';
+
+$escala-plus: 12.5rem; // 200
+$escala-xx-gg: 8rem; // 128
+$escala-xxg: 6rem; // 96
+$escala-xg: 4.5rem; // 72
+$escala-g: 3rem; // 48
+$escala-m: 2rem; // 32
+$escala-p: 1.5rem; // 24
+$escala-pp: 1rem; // 16
+
+$cor-1: #e;
+$cor-2: #e;
+$cor-3: #e;
+
+$largura-total: min(100%, 1200px);
+
+.showing{
+  opacity: 0;
+  animation: showing 500ms forwards;
+}
+
+@keyframes showing {
+  50%{
+    transform: translateY(0);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.showing{
+  animation: hiding 500ms forwards;
+}
+
+@keyframes hiding {
+  100%{
+    opacity: 0;
+  }
+}

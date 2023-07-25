@@ -1,0 +1,58 @@
+.showing {
+  opacity: 0;
+  animation: showing 500ms forwards;
+}
+
+@keyframes showing {
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.showing {
+  animation: hiding 500ms forwards;
+}
+
+@keyframes hiding {
+  100% {
+    opacity: 0;
+  }
+}
+.QAItem_container {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  padding: 1.5rem;
+  transition: grid-template-rows 500ms;
+  width: 70%;
+  margin: 0 auto;
+  background: #2d2d2d;
+  border-radius: 10px;
+  margin-block: 3rem;
+}
+.QAItem_container .QAI_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.QAItem_container .QAI_wrapper i {
+  transition: 200ms;
+  color: white;
+}
+.QAItem_container .QAI_wrapper .btn_open {
+  transform: rotate(180deg);
+}
+.QAItem_container .QAAnswer {
+  overflow: hidden;
+  line-height: 1.6;
+}
+
+.open {
+  grid-template-rows: auto 1fr;
+  grid-auto-flow: column;
+  background: #191919;
+}
+
+/*# sourceMappingURL=QAItem.css.map */

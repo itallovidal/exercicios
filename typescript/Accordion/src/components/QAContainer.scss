@@ -1,0 +1,13 @@
+@use '../css/_config' as *;
+
+#QAContainer{
+  width: 800px;
+  color: white;
+  border-radius: 10px;
+  padding: $escala-m;
+  background: #000000;
+
+  h1{
+    text-align: center;
+  }
+}
