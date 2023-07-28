@@ -1,0 +1,31 @@
+.btnConfig {
+  padding: 1rem;
+  border-radius: 10px;
+  transition: 400ms;
+  cursor: pointer;
+}
+.btnConfig i {
+  margin-right: 10px;
+}
+
+.outlined {
+  border: 2px solid #00b373;
+  background: #202024;
+  color: #00b373;
+}
+.outlined:hover {
+  background: #00b373;
+  color: #fff;
+}
+
+.filled {
+  background: #00975f;
+  color: #fff;
+  border: none;
+}
+.filled:hover {
+  background: #00b373;
+  color: #fff;
+}
+
+/*# sourceMappingURL=button.module.css.map */

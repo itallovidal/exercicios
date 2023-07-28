@@ -1,0 +1,34 @@
+@use '../../../partials/_config' as *;
+
+.btnConfig{
+  padding: $escala-pp;
+  border-radius: 10px;
+  transition: 400ms;
+  cursor: pointer;
+
+  i{
+    margin-right: 10px;
+  }
+}
+
+.outlined{
+  border: 2px solid $cor-primaria;
+  background: $cor-neutra-7;
+  color: $cor-primaria;
+
+  &:hover{
+    background: $cor-primaria;
+    color: $cor-neutra-1;
+  }
+}
+
+.filled{
+  background: $cor-secundaria;
+  color: $cor-neutra-1;
+  border: none;
+
+  &:hover{
+    background: $cor-primaria;
+    color: $cor-neutra-1;
+  }
+}

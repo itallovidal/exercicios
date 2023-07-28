@@ -1,0 +1,65 @@
+.container {
+  padding: 1.5rem;
+  background: #202024;
+  color: white;
+  border-radius: 8px;
+}
+.container:not(.container:nth-child(1)) {
+  margin-block: 1.5rem;
+}
+.container .containerAuthor {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.container .containerAuthor picture {
+  max-height: 50px;
+  width: 50px;
+}
+.container .containerAuthor .wrapper {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+.container .containerAuthor .wrapper .author {
+  flex: 1;
+}
+.container .containerAuthor .wrapper .author .subtitle {
+  opacity: 0.4;
+}
+.container .containerFeedback {
+  min-height: 12.5rem;
+}
+.container .containerFeedback .feedback {
+  line-height: 1.8;
+}
+.container .containerFeedback a {
+  color: #00b373;
+}
+.container .sendFeedback {
+  border-top: 1px solid #323238;
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+}
+.container .sendFeedback .title {
+  margin-block: 1.5rem;
+  font-size: 1rem;
+  width: 100%;
+}
+.container .sendFeedback .feedbackArea {
+  border: 2px solid #00b373;
+  background: black;
+  width: 100%;
+  border-radius: 8px;
+  resize: none;
+  color: white;
+  padding: 1rem;
+  outline: none;
+  margin-bottom: 1.5rem;
+}
+.container .sendFeedback .feedbackArea::placeholder {
+  font-style: italic;
+}
+
+/*# sourceMappingURL=post.module.css.map */

@@ -1,0 +1,15 @@
+header.container {
+  height: 100px;
+  background: #202024;
+  padding: 1.5rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+header.container h1.title {
+  color: #fff;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=header.module.css.map */

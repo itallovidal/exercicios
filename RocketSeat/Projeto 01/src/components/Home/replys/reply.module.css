@@ -1,0 +1,60 @@
+@charset "UTF-8";
+.container {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 50px 1fr;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+.container .containerReply {
+  grid-row: 1/-1;
+  grid-column: 2/-1;
+}
+.container .containerReply .author {
+  padding: 1.5rem;
+  background: #323238;
+  border-radius: 10px;
+}
+.container .containerReply .author .title {
+  margin-bottom: 0.3rem;
+}
+.container .containerReply .author .postedTime {
+  opacity: 0.4;
+}
+.container .containerReply .author .comment {
+  margin-top: 1.5rem;
+}
+.container .containerReply .containerLiked {
+  margin-top: 1.5rem;
+}
+.container .containerReply .containerLiked > *:nth-child(2) {
+  margin-left: 1rem;
+}
+.container .containerReply .containerLiked > * {
+  opacity: 0.6;
+}
+.container .containerReply .containerLiked > *:hover {
+  opacity: 1;
+}
+.container .containerReply .containerLiked .btnLike {
+  background: none;
+  cursor: pointer;
+  color: white;
+  border: none;
+  outline: none;
+}
+.container .containerReply .containerLiked .likes:before {
+  content: " • ";
+}
+.container .containerReply .liked {
+  opacity: 1;
+  color: #00975f !important;
+}
+.container .containerReply .liked > * {
+  opacity: 1;
+}
+.container .containerReply .liked button {
+  color: #00975f !important;
+}
+
+/*# sourceMappingURL=reply.module.css.map */

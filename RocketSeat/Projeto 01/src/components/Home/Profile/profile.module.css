@@ -1,0 +1,56 @@
+.container {
+  border-radius: 10px;
+  background: #202024;
+  color: #fff;
+  height: fit-content;
+}
+.container .header {
+  background-size: 100%;
+  background: url("../../../assets/backGroundProfile.jpg") center;
+  height: 4.5rem;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+.container .header .wrapperPerfil {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 60px;
+  width: 60px;
+}
+@media (max-width: 600px) {
+  .container .header .wrapperPerfil {
+    transform: translate(-50%, 30%);
+  }
+}
+.container .body {
+  padding: 2rem;
+}
+.container .body .input {
+  background: #323238;
+  border-radius: 7px;
+  border: none;
+  padding: 1rem;
+  margin-block: 10px;
+  width: 100%;
+  color: white;
+  outline: 1px solid #00b373;
+}
+.container .body .title {
+  text-align: center;
+  font-size: 1rem;
+}
+.container .body .subtitle {
+  text-align: center;
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.4;
+}
+.container .footer {
+  padding: 2rem;
+  border-top: 1px solid #323238;
+  display: grid;
+  place-items: center;
+}
+
+/*# sourceMappingURL=profile.module.css.map */
