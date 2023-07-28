@@ -2,7 +2,6 @@
 //<script src="https://kit.fontawesome.com/782e4cfd7d.js" crossorigin="anonymous"></script>
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-
 $fonte-1: '';
 $fonte-2: '';
 
@@ -22,28 +21,3 @@ $cor-2: #e;
 $cor-3: #e;
 
 $largura-total: min(100%, 1200px);
-
-.showing{
-  opacity: 0;
-  animation: showing 500ms forwards;
-}
-
-@keyframes showing {
-  50%{
-    transform: translateY(0);
-  }
-  100%{
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.showing{
-  animation: hiding 500ms forwards;
-}
-
-@keyframes hiding {
-  100%{
-    opacity: 0;
-  }
-}
