@@ -1,0 +1,18 @@
+@use '../../../partials/_config' as *;
+
+.profilePicture {
+  bottom: 0;
+  border-radius: 15px;
+  overflow: hidden;
+
+  .img{
+    height: 100%;
+    width: 100%;
+    transform: scale(1.1);
+  }
+}
+
+.outlined{
+  border: 3px solid black;
+  outline: 3px solid $cor-primaria;
+}

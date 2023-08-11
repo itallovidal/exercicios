@@ -1,0 +1,74 @@
+@use '../../../partials/_config' as *;
+
+.container{
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 50px 1fr;
+
+  margin-top: $escala-p;
+  gap: $escala-pp;
+
+  .containerReply{
+    grid-row: 1/-1;
+    grid-column: 2/-1;
+
+    .author{
+      padding: $escala-p;
+      background: $cor-neutra-6;
+      border-radius: 10px;
+
+      .title{
+        margin-bottom: $escala-pp * .3;
+      }
+
+      .postedTime{
+        opacity: .4;
+      }
+
+      .comment{
+        margin-top: $escala-p;
+      }
+    }
+
+    .containerLiked{
+      margin-top: $escala-p;
+
+      > *:nth-child(2){
+        margin-left: $escala-pp;
+      }
+      > *{
+        opacity: .6;
+      }
+
+      > *:hover{
+        opacity: 1;
+      }
+
+      .btnLike{
+        background: none;
+        cursor: pointer;
+        color: white;
+        border: none;
+        outline: none;
+      }
+      .likes{
+        &:before{
+          content: ' • ';
+        }
+      }
+    }
+
+    .liked{
+      opacity: 1;
+      color: $cor-secundaria !important;
+
+      > *{
+        opacity: 1;
+      }
+
+      button{
+        color: $cor-secundaria !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use '../../../partials/config' as *;
+
+.container{
+  padding: $escala-p;
+  background: $cor-neutra-7;
+  color: white;
+  border-radius: 8px;
+
+  &:not( &:nth-child(1)){
+    margin-block: $escala-p;
+  }
+  .containerAuthor{
+    display: flex;
+    gap: $escala-p;
+    margin-bottom: $escala-p;
+
+    picture{
+      max-height: 50px;
+      width: 50px;
+    }
+    .wrapper{
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      .author{
+        flex: 1;
+        .subtitle{
+          opacity: .4;
+        }
+      }
+    }
+  }
+
+  .containerFeedback{
+    min-height: $escala-plus;
+
+    .feedback{
+      line-height: 1.8;
+    }
+
+    a{
+      color: $cor-primaria;
+    }
+  }
+
+  .sendFeedback{
+    border-top: 1px solid $cor-neutra-6;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+
+    .title{
+      margin-block:$escala-p;
+      font-size: $escala-pp;
+      width: 100%;
+
+    }
+
+    .feedbackArea{
+      border: 2px solid $cor-primaria;
+      background: black;
+      width: 100%;
+      border-radius: 8px;
+      resize: none;
+      color: white;
+      padding: $escala-pp;
+      outline: none;
+      margin-bottom: $escala-p;
+
+      &::placeholder{
+        font-style: italic;
+      }
+    }
+  }
+}
+
